@@ -1,0 +1,4 @@
+name: php-fpm-stats
+summary: Stats for PHP-FPM
+version: 1
+repo: https://github.com/silph-io/interface-php-fpm-stats.git
