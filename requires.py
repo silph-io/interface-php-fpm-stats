@@ -15,7 +15,11 @@ class RequiresPHPRPMStats(RelationBase):
         if conv.get_remote('status_url'):
             conv.set_state('{relation_name}.available')
 
-    @hook('{requires:http}-relation-{departed,broken}')
+    @hook('{requires:php-fpm-stats}-relation-{departed,broken}')
     def broken(self):
         conv = self.conversation()
         conv.remove_state('{relation_name}.available')
+
+    def configuration(self):
+        conv = self.conversation()
+        return {k: conv.get_remote(k) for k in self.auto_accessors}
