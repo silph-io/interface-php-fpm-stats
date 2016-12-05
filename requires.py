@@ -5,7 +5,7 @@ from charms.reactive import scopes
 
 
 class RequiresPHPRPMStats(RelationBase):
-    scope = scopes.UNIT
+    scope = scopes.GLOBAL
 
     auto_accessors = ['ping_url', 'status_url', 'ping_reply']
 
